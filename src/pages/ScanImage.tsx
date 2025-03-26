@@ -6,6 +6,7 @@ import MainLayout from "@/components/layout/MainLayout";
 import PageTitle from "@/components/ui/page-title";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ImageClassifier from "@/components/melanoma/ImageClassifier";
+import ABCDMethod from "@/components/melanoma/ABCDMethod";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { cn, formatPercentage } from "@/lib/utils";
@@ -80,6 +81,18 @@ const ScanImage: React.FC = () => {
                 </div>
               </TabsContent>
             </Tabs>
+            
+            {/* Add the ABCD Method component below the image classifier */}
+            {result && (
+              <motion.div
+                className="mt-6"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.3 }}
+              >
+                <ABCDMethod classification={result.classification} />
+              </motion.div>
+            )}
           </div>
           
           <div>
