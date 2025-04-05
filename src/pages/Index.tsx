@@ -6,6 +6,7 @@ import StatsCard from "@/components/dashboard/StatsCard";
 import ActivityChart from "@/components/charts/ActivityChart";
 import ModelCard from "@/components/melanoma/ModelCard";
 import ABCDMethod from "@/components/melanoma/ABCDMethod";
+import { modelMetrics, monthlyStats } from "@/lib/mockData";
 
 const Index: React.FC = () => {
   return (
@@ -55,28 +56,28 @@ const Index: React.FC = () => {
           <StatsCard
             title="Total Scans"
             value="1,284"
-            trend="+12.5%"
+            trend="12.5%"
             trendDirection="up"
             description="vs. previous month"
           />
           <StatsCard
             title="Detection Rate"
             value="94.2%"
-            trend="+3.1%"
+            trend="3.1%"
             trendDirection="up"
             description="vs. previous version"
           />
           <StatsCard
             title="Malignant Cases"
             value="164"
-            trend="-8.4%"
+            trend="8.4%"
             trendDirection="down"
             description="vs. previous month"
           />
           <StatsCard
             title="Avg. Confidence"
             value="92.7%"
-            trend="+1.3%"
+            trend="1.3%"
             trendDirection="up"
             description="vs. previous month"
           />
@@ -90,7 +91,7 @@ const Index: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
-            <ActivityChart />
+            <ActivityChart data={monthlyStats} />
           </motion.div>
 
           <motion.div
@@ -98,7 +99,7 @@ const Index: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            <ModelCard />
+            <ModelCard metrics={modelMetrics} />
           </motion.div>
         </div>
 
