@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Dataset } from '@/types/melanoma';
 import { Progress } from '@/components/ui/progress';
+import FileFormatIcon from './FileFormatIcon';
 
 interface DatasetCardProps {
   dataset: Dataset;
@@ -53,9 +54,22 @@ const DatasetCard: React.FC<DatasetCardProps> = ({ dataset, className }) => {
           </div>
         </div>
         
-        <div className="pt-3 flex text-sm text-muted-foreground">
+        <div className="pt-3 flex flex-wrap text-sm text-muted-foreground">
           <span className="mr-4">Source: {dataset.source}</span>
-          <span>Updated: {dataset.lastUpdated}</span>
+          <span className="mr-4">Updated: {dataset.lastUpdated}</span>
+          {dataset.fileFormat && (
+            <span className="mr-4 flex items-center">
+              <FileFormatIcon 
+                filename={dataset.fileFormat} 
+                size={14} 
+                className="mr-1" 
+              />
+              Format: {dataset.fileFormat.toUpperCase()}
+            </span>
+          )}
+          {dataset.fileSize && (
+            <span>Size: {(dataset.fileSize / 1024 / 1024).toFixed(2)} MB</span>
+          )}
         </div>
       </div>
       

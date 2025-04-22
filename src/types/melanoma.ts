@@ -23,6 +23,8 @@ export interface Dataset {
   malignantCount: number;
   lastUpdated: string;
   source: string;
+  fileFormat?: string;
+  fileSize?: number;
 }
 
 export interface ModelMetrics {

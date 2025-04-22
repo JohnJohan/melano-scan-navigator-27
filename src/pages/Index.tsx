@@ -56,29 +56,29 @@ const Index: React.FC = () => {
           <StatsCard
             title="Total Scans"
             value="1,284"
-            trend="12.5%"
-            trendDirection="up"
+            trend="up"
+            trendValue="12.5%"
             description="vs. previous month"
           />
           <StatsCard
             title="Detection Rate"
             value="94.2%"
-            trend="3.1%"
-            trendDirection="up"
+            trend="up"
+            trendValue="3.1%"
             description="vs. previous version"
           />
           <StatsCard
             title="Malignant Cases"
             value="164"
-            trend="8.4%"
-            trendDirection="down"
+            trend="down"
+            trendValue="8.4%"
             description="vs. previous month"
           />
           <StatsCard
             title="Avg. Confidence"
             value="92.7%"
-            trend="1.3%"
-            trendDirection="up"
+            trend="up"
+            trendValue="1.3%"
             description="vs. previous month"
           />
         </motion.div>
