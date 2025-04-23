@@ -6,9 +6,6 @@ import {
   Home, 
   Database, 
   Image, 
-  BarChart2, 
-  Settings, 
-  HelpCircle,
   ChevronLeft,
   ChevronRight
 } from "lucide-react";
@@ -24,9 +21,6 @@ const sidebarItems = [
   { icon: Home, label: "Dashboard", path: "/" },
   { icon: Database, label: "Datasets", path: "/datasets" },
   { icon: Image, label: "Scan Image", path: "/scan" },
-  { icon: BarChart2, label: "Analytics", path: "/analytics" },
-  { icon: Settings, label: "Settings", path: "/settings" },
-  { icon: HelpCircle, label: "Help", path: "/help" },
 ];
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {

@@ -3,7 +3,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import MainLayout from "@/components/layout/MainLayout";
 import StatsCard from "@/components/dashboard/StatsCard";
-import ActivityChart from "@/components/charts/ActivityChart";
 import ModelCard from "@/components/melanoma/ModelCard";
 import ABCDMethod from "@/components/melanoma/ABCDMethod";
 import { modelMetrics, monthlyStats } from "@/lib/mockData";
@@ -83,27 +82,16 @@ const Index: React.FC = () => {
           />
         </motion.div>
 
-        {/* Charts and data analysis section */}
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-          <motion.div
-            className="lg:col-span-2"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-          >
-            <ActivityChart data={monthlyStats} />
-          </motion.div>
+        {/* Model card section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+        >
+          <ModelCard metrics={modelMetrics} />
+        </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-          >
-            <ModelCard metrics={modelMetrics} />
-          </motion.div>
-        </div>
-
-        {/* ABCD Method section - replacing Recent Scans */}
+        {/* ABCD Method section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

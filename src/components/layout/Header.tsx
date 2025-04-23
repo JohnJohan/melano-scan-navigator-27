@@ -43,13 +43,6 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, sidebarOpen }) => {
         
         <div className="flex items-center gap-2">
           <Button
-            variant="outline"
-            size="sm"
-            className="hidden md:flex"
-          >
-            Documentation
-          </Button>
-          <Button
             variant="default"
             size="sm"
           >
@@ -62,4 +55,3 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, sidebarOpen }) => {
 };
 
 export default Header;
-
