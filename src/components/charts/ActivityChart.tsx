@@ -156,8 +156,33 @@ const ActivityChart: React.FC<ActivityChartProps> = ({ data, className }) => {
           )}
         </ResponsiveContainer>
       </div>
+      
+      <div className="mt-8">
+        <h4 className="text-base font-medium mb-3">Raw Scan Data Output</h4>
+        <div className="overflow-x-auto">
+          <table className="min-w-full text-sm border border-border rounded-md">
+            <thead>
+              <tr className="bg-secondary">
+                <th className="p-2 border-b border-border text-left">Month</th>
+                <th className="p-2 border-b border-border text-left">Total Scans</th>
+                <th className="p-2 border-b border-border text-left">Malignant Cases</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.map((row, idx) => (
+                <tr key={row.month} className={idx % 2 === 0 ? "bg-card" : "bg-muted/50"}>
+                  <td className="p-2 border-b border-border">{row.month}</td>
+                  <td className="p-2 border-b border-border">{row.scans}</td>
+                  <td className="p-2 border-b border-border">{row.malignant}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 };
 
 export default ActivityChart;
+
